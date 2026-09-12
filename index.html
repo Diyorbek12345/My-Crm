@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>CRM</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <input
+          type="text"
+          id="search"
+          class="form_control"
+          placeholder="Search for workers..."
+          autocomplete="off"
+        />
+        <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="buttons">
+          <select
+            type="button"
+            id="filterPosition"
+            class="btn_filter_position"
+          ></select>
+          <select
+            type="button"
+            id="filterCity"
+            class="btn_filter_city"
+          ></select>
+          <button
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            class="btn_add"
+            id="addBtn"
+          >
+            New
+          </button>
+        </div>
+      </div>
+      <div class="main">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Firstname</th>
+              <th scope="col">Lastname</th>
+              <th scope="col">Address</th>
+              <th scope="col">Birthday</th>
+              <th scope="col">Language</th>
+              <th scope="col">Work level</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Is Married</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="workersTable"></tbody>
+        </table>
+      </div>
+      <form class="row g-3 needs-validation" id="workerForm">
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  New employee
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row-md-4">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a Firstname.</div>
+                </div>
+                <div class="row-md-4">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a Firstname.</div>
+                </div>
+                <div class="row-md-4">
+                  <label for="filterHometown">Hometown</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="filterHometown"
+                    required
+                  ></select>
+                </div>
+                <div class="row-md-4">
+                  <label for="workerBirthday" class="form-label"
+                    >Birthday</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="workerBirthday"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a Date.</div>
+                </div>
+                <div class="row-md-4">
+                  <label for="filterTechnology">Technology</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="filterTechnology"
+                    required
+                  ></select>
+                </div>
+                <div class="row-md-4">
+                  <label for="filterPositionAdd">Level</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="filterPositionAdd"
+                    required
+                  ></select>
+                </div>
+                <div class="mb-1">
+                  <label for="salaryWoker" class="form-label"
+                    >How much is your salary</label
+                  >
+                  <input
+                    class="form-control"
+                    type="number"
+                    step="100"
+                    id="salaryWoker"
+                    required
+                  />
+                  <div class="valid-feedback">It's filled correctly!</div>
+                  <div class="invalid-feedback">It should be filled!</div>
+                </div>
+                <div class="col-12 mb-1">
+                  <div class="form-check">
+                    <label class="form-check-label" for="isMarried">
+                      Is Merried?
+                    </label>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="isMarried"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button id="sendBtn" type="submit" class="btn btn-warning">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
