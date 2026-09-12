@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -118,19 +118,211 @@
 }
 
 @media (max-width: 417px) {
-  .btn_filter_position{
+  .btn_filter_position {
     display: none;
   }
 
-  .btn_filter_city{
+  .btn_filter_city {
     display: none;
   }
-  .search{
+  .search {
     display: none;
   }
 
-  .form_control{
+  .form_control {
     display: block;
     margin-right: 10px;
+  }
+
+  .main {
+    overflow-x: auto;
+  }
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1400px;
+  padding-top: 5px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form_control {
+  width: 800px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.form_control:focus {
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn_filter_position {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: rgb(44, 167, 160);
+  color: rgb(241, 243, 243);
+  cursor: pointer;
+  border: none;
+}
+
+.btn_filter_city {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: rgb(149, 45, 163);
+  color: rgb(249, 247, 250);
+  cursor: pointer;
+  border: none;
+}
+
+.btn_add {
+  padding: 11px 20px;
+  border-radius: 10px;
+  background-color: rgb(221, 201, 17);
+  color: rgb(241, 240, 236);
+  cursor: pointer;
+  border: none;
+}
+
+.edit_row {
+  padding: 0;
+}
+
+.edit_btn {
+  padding: 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+}
+
+.delete_btn {
+  padding: 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: white;
+}
+
+.search {
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+  border: none;
+  background-color: transparent;
+}
+
+.block {
+  display: block;
+}
+
+/* ====== Jadval mobilga sig'masa, gorizontal scroll bilan ko'rsatish ====== */
+.main {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  min-width: 650px;
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+}
+
+/* ====== Modal mobilda chetlarga yopishib qolmasin ====== */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 10px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1400px) {
+  .form_control {
+    width: 600px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .form_control {
+    width: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .form_control {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    display: block;
+  }
+  .form_control {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 417px) {
+  .btn_filter_position {
+    display: none;
+  }
+
+  .btn_filter_city {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+
+  .form_control {
+    display: block;
+    margin-right: 10px;
+    width: 100%;
+  }
+
+  .header {
+    align-items: stretch;
+  }
+
+  .buttons {
+    width: 100%;
+  }
+
+  .btn_add {
+    width: 100%;
+  }
+
+  .main {
+    overflow-x: auto;
   }
 }
