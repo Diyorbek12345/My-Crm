@@ -256,12 +256,6 @@
 }
 
 /* ====== Modal mobilda chetlarga yopishib qolmasin ====== */
-@media (max-width: 576px) {
-  .modal-dialog {
-    margin: 10px;
-    width: auto;
-  }
-}
 
 @media (max-width: 1400px) {
   .form_control {
@@ -285,12 +279,19 @@
   .search {
     display: block;
   }
+
+
   .form_control {
     display: none;
   }
 }
 
-
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 10px;
+    width: auto;
+  }
+}
 
 @media (max-width: 417px) {
   .btn_filter_position {

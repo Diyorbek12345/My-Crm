@@ -6,7 +6,7 @@ const City = [
   "Buxoro",
   "Qashqadaryo",
   "Surxandaryo",
-  "Nmaangan",
+  "Namangan",
   "Farg'ona",
   "Andijon",
   "Xorazm",
@@ -127,7 +127,7 @@ workerForm.addEventListener("submit", function (e) {
   let check = this.checkValidity();
   this.classList.add("was-validated");
   if (check) {
-    bootstrap.Modal.getInstance(formModal).hide();
+    // bootstrap.Modal.getInstance(formModal).hide();
     let newWorker = {
       firstname: firstName.value,
       lastname: lastName.value,
